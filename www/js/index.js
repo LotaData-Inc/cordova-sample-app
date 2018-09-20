@@ -58,48 +58,28 @@ var app = {
         btnLocation.addEventListener('click', this.getBestKnownLocation, false);
 
         console.log('Received Event: ' + id);
-    }
+    },
 
     initMomentsSdk: function() {
-        plugins.moments.initialize(successCallback, errorMessage);
+        plugins.moments.initialize(successCallback, errorCallback);
     },
 
     recordEvent: function() {
-        plugins.moments.recordEvent("an_event", null, function (msg) {
-                alert(msg);
-            }, function (msg) {
-                alert(msg);
-            }
-        );
+        plugins.moments.recordEvent("an_event", null, successCallback, errorCallback);
     },
 
     recordEventWithData: function() {
-        plugins.moments.recordEvent("an_event", 3.0, function (msg) {
-                alert(msg);
-            }, function (msg) {
-                alert(msg);
-            }
-        );
+        plugins.moments.recordEvent("an_event", 3.0, successCallback, errorCallback);
     },
 
     setFgTrackingMode: function() {
         var trackingMode = plugins.moments.TrackingMode.MINIMAL_POWER;
-        plugins.moments.setFgTrackingMode(trackingMode, function (msg) {
-                alert(msg);
-            }, function (msg) {
-                alert(msg);
-            }
-        );
+        plugins.moments.setFgTrackingMode(trackingMode, successCallback, errorCallback);
     },
 
     setBgTrackingMode: function() {
         var trackingMode = plugins.moments.TrackingMode.STAY_DETECTION;
-        plugins.moments.setBgTrackingMode(trackingMode, function (msg) {
-                alert(msg);
-            }, function (msg) {
-                alert(msg);
-            }
-        );
+        plugins.moments.setBgTrackingMode(trackingMode, successCallback, errorCallback);
     },
 
     getBestKnownLocation: function() {
