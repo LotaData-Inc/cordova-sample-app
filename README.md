@@ -3,6 +3,8 @@ Sample Cordova App
 
 The idea behind the app is simple: Show off how to integrate Lotadata Cordova Plugin with an app.
 
+![](sample.png)
+
 #### 1. Add the Android platform to the project
 ```
 $ cordova platform add android
